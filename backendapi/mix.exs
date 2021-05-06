@@ -42,7 +42,11 @@ defmodule Backendapi.MixProject do
       {:telemetry_poller, "~> 0.4"},
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
-      {:plug_cowboy, "~> 2.0"}
+      {:plug_cowboy, "~> 2.0"},
+      {:argon2_elixir, "~> 2.4"},
+      {:absinthe, "~> 1.6"},
+      {:absinthe_plug, "~> 1.5"},
+      {:dataloader, "~> 1.0"},
     ]
   end
 
