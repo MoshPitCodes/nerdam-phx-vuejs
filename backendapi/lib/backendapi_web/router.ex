@@ -7,6 +7,13 @@ defmodule BackendapiWeb.Router do
 
   scope "/api", BackendapiWeb do
     pipe_through :api
+
+    forward("/graphql", Absinthe.Plug, schema: BackendapiWeb.Schema)
+
+
+    if Mix.env() = :dev do
+      forward("/graphiql", Absinthe.Plug.GraphiQl, schema: BackendapiWeb.Schema)
+    end
   end
 
   # Enables LiveDashboard only for development
